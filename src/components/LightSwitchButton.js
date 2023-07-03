@@ -2,8 +2,12 @@ import {useState} from 'react'; //optional
 
 
   function LightSwitchButton(props){
+    
+    // * Extract The Logic From The Component to the App.js
+    // const handleClick = () => props.setLight(props.light === "on" ? "off" : "on");
 
-    const handleClick = () => props.setLight(props.light === "on" ? "off" : "on");
+    const { light, switchLight } = props;
+    const handleClick = () => switchLight();
 
     return (
       <button className="LightSwitchButton" onClick={handleClick}>
